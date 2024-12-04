@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "../rating/Rating";
 
 const CardHighestRated = ({ review }) => {
   const {
@@ -23,7 +24,9 @@ const CardHighestRated = ({ review }) => {
       </div>
       <div className="w-3/6">
         <h3 className="text-xl font-bold capitalize">{title}</h3>
-        <h4 className="text-lg font-semibold mt-2">Rating: {rating}</h4>
+        <h4 className="text-lg font-semibold mt-2">
+          Rating: <Rating ratingNumber={rating} />
+        </h4>
       </div>
       <div className="w-1.5/6">
         <button className="btn btn-primary ">Explore Details</button>

@@ -1,9 +1,17 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import CardLatest from "./CardLatest";
 
 const LatestReview = () => {
+  const [latest, setLatest] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/reviews/latest")
+      .then((res) => res.json())
+      .then((data) => setLatest(data));
+  }, []);
+
   return (
-    <section className="my-24">
+    <section className="my-24 mb-40">
       <div className="container">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold">Latest Review</h2>
@@ -12,8 +20,10 @@ const LatestReview = () => {
             application .
           </p>
         </div>
-        <div>
-          <CardLatest />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {latest.map((newReview) => (
+            <CardLatest key={newReview._id} newReview={newReview} />
+          ))}
         </div>
       </div>
     </section>

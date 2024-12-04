@@ -4,7 +4,7 @@ import CardHighestRated from "./CardHighestRated";
 
 const HighestRated = () => {
   const getHighestRating = useLoaderData();
-  console.log(getHighestRating);
+
   return (
     <section className="my-24">
       <div className="text-center mb-20">

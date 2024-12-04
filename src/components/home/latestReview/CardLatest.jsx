@@ -1,24 +1,42 @@
 import React from "react";
+import Rating from "../rating/Rating";
 
-const CardLatest = () => {
+const CardLatest = ({ newReview }) => {
+  const {
+    title,
+    rating,
+    publishYear,
+    genres,
+    thumbnail,
+    username,
+    email,
+    description,
+  } = newReview;
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-xl">
+      <div className="card bg-base-100  shadow-xl">
         <figure>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            className="w-full object-cover max-h-60"
+            src={thumbnail}
             alt="Shoes"
           />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
-            Shoes!
-            <div className="badge badge-secondary">NEW</div>
+            {title}
+            <div className="badge badge-secondary ml-auto">NEW</div>
           </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+          <p className="text-gray-500">Author: {username}</p>
+          <div className="card-actions justify-between">
+            <div className="">
+              <span className="text-gray-500">
+                Published Year: {publishYear}
+              </span>
+            </div>
+            <div className="">
+              <Rating ratingNumber={rating} />
+            </div>
           </div>
         </div>
       </div>
