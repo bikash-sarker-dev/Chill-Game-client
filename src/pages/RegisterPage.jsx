@@ -1,7 +1,14 @@
 import React from "react";
+import LoginHead from "../components/login/LoginHead";
+import RegisterForm from "../components/register/RegisterForm";
 
 const RegisterPage = () => {
-  return <div>RegisterPage</div>;
+  return (
+    <main>
+      <LoginHead title="Get started with easily register" />
+      <RegisterForm />
+    </main>
+  );
 };
 
 export default RegisterPage;

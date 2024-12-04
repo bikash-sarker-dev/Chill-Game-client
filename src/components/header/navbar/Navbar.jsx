@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import NavItems from "./NavItems";
 
 const Navbar = () => {
@@ -37,8 +38,13 @@ const Navbar = () => {
             <NavItems />
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end space-x-3">
+          <Link className="btn btn-outline btn-info uppercase" to="/login">
+            Login
+          </Link>
+          <Link className="btn btn-outline btn-info uppercase " to="/register">
+            Register
+          </Link>
         </div>
       </div>
     </div>
