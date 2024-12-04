@@ -1,7 +1,12 @@
 import React from "react";
+import AddReviewInput from "../components/addReviews/AddReviewInput";
 
 const AddReviewPage = () => {
-  return <div>AddReviewPage</div>;
+  return (
+    <main>
+      <AddReviewInput />
+    </main>
+  );
 };
 
 export default AddReviewPage;
