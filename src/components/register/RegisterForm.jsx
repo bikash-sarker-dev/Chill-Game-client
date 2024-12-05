@@ -34,16 +34,28 @@ const RegisterForm = () => {
     accountRegister(email, password)
       .then((data) => {
         const user = data.user;
-
+        const creationTime = user.metadata?.creationTime;
         // update
         updateProfile(user, updateDat)
           .then(() => {
             setUser(user);
-            Swal.fire({
-              title: "Successfully !",
-              text: "this is account created . Enjoy your application",
-              icon: "success",
-            });
+            fetch("http://localhost:8000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify({ username, email, creationTime }),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  Swal.fire({
+                    title: "Successfully !",
+                    text: "this is account created . Enjoy your application",
+                    icon: "success",
+                  });
+                }
+              });
           })
           .catch((error) => {
             const errorMessage = error.message;

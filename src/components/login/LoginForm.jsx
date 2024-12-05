@@ -1,12 +1,49 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../contextAip/ContextCreate";
 
 const LoginForm = () => {
   const [passShow, setPassShow] = useState(false);
+  const { accountLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    accountLogin(email, password)
+      .then((loginData) => {
+        const user = loginData.user;
+
+        const lastSignInTime = user.metadata?.lastSignInTime;
+        fetch(`http://localhost:8000/users/${email}`, {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ lastSignInTime }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            navigate("/");
+          });
+        form.reset();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        if (errorMessage.includes("auth/invalid-credential")) {
+          toast.warn("the Email and password not match. please try again .");
+        }
+      });
+  };
+
   return (
     <div className="card bg-base-100 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
-      <form className="card-body">
+      <form onSubmit={handleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>

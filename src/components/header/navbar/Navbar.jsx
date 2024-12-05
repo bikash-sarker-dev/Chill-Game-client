@@ -1,11 +1,23 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../../contextAip/ContextCreate";
 import NavItems from "./NavItems";
 
 const Navbar = () => {
-  const { name } = useContext(AuthContext);
+  const { user, accountLogOut } = useContext(AuthContext);
+  console.log(user);
 
+  const logOut = () => {
+    accountLogOut()
+      .then(() => {
+        toast.success("Your LogOut Successfully !");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="container">
       <div className="navbar bg-base-100 my-3">
@@ -41,13 +53,41 @@ const Navbar = () => {
             <NavItems />
           </ul>
         </div>
-        <div className="navbar-end space-x-3">
-          <Link className="btn btn-outline btn-info uppercase" to="/login">
-            Login
-          </Link>
-          <Link className="btn btn-outline btn-info uppercase " to="/register">
-            Register
-          </Link>
+        <div className="navbar-end ">
+          {user && user?.email ? (
+            <div className="space-x-3 flex items-center">
+              <Tooltip anchorSelect=".my-anchor-element" place="left">
+                {user?.displayName}
+              </Tooltip>
+              <div className="avatar placeholder my-anchor-element cursor-pointer ">
+                <div className="bg-neutral text-neutral-content w-12 rounded-full border-2 border-teal-500">
+                  <img
+                    src={user?.photoURL}
+                    alt="profile photo is not support"
+                  />
+                </div>
+              </div>
+
+              <button
+                onClick={logOut}
+                className="btn btn-outline btn-info uppercase"
+              >
+                LogOut
+              </button>
+            </div>
+          ) : (
+            <div className="space-x-3">
+              <Link className="btn btn-outline btn-info uppercase" to="/login">
+                Login
+              </Link>
+              <Link
+                className="btn btn-outline btn-info uppercase "
+                to="/register"
+              >
+                Register
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
