@@ -31,14 +31,14 @@ const LoginForm = () => {
             required
           />
           <div className="absolute  right-5 top-9 ">
-            <button onClick={() => setPassShow(!passShow)}>
+            <span onClick={() => setPassShow(!passShow)}>
               {" "}
               {passShow ? (
                 <FaRegEyeSlash className="text-2xl" />
               ) : (
                 <FaRegEye className="text-2xl" />
               )}
-            </button>
+            </span>
           </div>
         </div>
         <div className="form-control mt-6">

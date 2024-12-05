@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { updateProfile } from "firebase/auth";
+import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../contextAip/ContextCreate";
 
 const RegisterForm = () => {
   const [passShow, setPassShow] = useState(false);
+  const { accountRegister, setUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -22,6 +26,36 @@ const RegisterForm = () => {
       );
       return;
     }
+
+    const updateDat = {
+      displayName: username,
+      photoURL: photo_Url,
+    };
+    accountRegister(email, password)
+      .then((data) => {
+        const user = data.user;
+
+        // update
+        updateProfile(user, updateDat)
+          .then(() => {
+            setUser(user);
+            Swal.fire({
+              title: "Successfully !",
+              text: "this is account created . Enjoy your application",
+              icon: "success",
+            });
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+          });
+
+        form.reset();
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
   };
   return (
     <div className="card bg-base-100 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
@@ -74,14 +108,14 @@ const RegisterForm = () => {
             required
           />
           <div className="absolute  right-5 top-9 ">
-            <button onClick={() => setPassShow(!passShow)}>
+            <span onClick={() => setPassShow(!passShow)}>
               {" "}
               {passShow ? (
                 <FaRegEyeSlash className="text-2xl" />
               ) : (
                 <FaRegEye className="text-2xl" />
               )}
-            </button>
+            </span>
           </div>
         </div>
         <div className="form-control mt-6">
