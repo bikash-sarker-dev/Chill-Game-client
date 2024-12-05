@@ -10,8 +10,8 @@ const Details = () => {
   const detailsPro = getData[0];
 
   const watchInfo = {
-    username: user.displayName,
-    email: user.email,
+    username: user?.displayName,
+    email: user?.email,
   };
 
   const handleWatchList = () => {
@@ -24,7 +24,6 @@ const Details = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Successfully",

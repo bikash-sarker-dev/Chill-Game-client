@@ -14,7 +14,6 @@ const Rating = ({ ratingNumber }) => {
         fullIcon={<i className="fa fa-star"></i>}
         activeColor="#ffd700"
       />
-      ,
     </>
   );
 };

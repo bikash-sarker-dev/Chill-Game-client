@@ -25,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/all-reviews",
         element: <AllReviewsPage />,
+        loader: () => fetch("http://localhost:8000/reviews"),
       },
       {
         path: "/details/:id",

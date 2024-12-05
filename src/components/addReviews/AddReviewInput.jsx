@@ -1,7 +1,9 @@
-import React from "react";
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../contextAip/ContextCreate";
 
 const AddReviewInput = () => {
+  const { user } = useContext(AuthContext);
   const handleAddReview = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -49,7 +51,6 @@ const AddReviewInput = () => {
       <div className="container">
         <div className="card bg-base-100 w-full max-w-4xl mx-auto shrink-0 shadow-2xl mb-10">
           <form onSubmit={handleAddReview} className="card-body">
-            {/* row 1  */}
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -78,7 +79,7 @@ const AddReviewInput = () => {
                 />
               </div>
             </div>
-            {/* row 2  */}
+
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -127,7 +128,7 @@ const AddReviewInput = () => {
                 />
               </div>
             </div>
-            {/* row 3  */}
+
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -137,6 +138,7 @@ const AddReviewInput = () => {
                   type="email"
                   name="email"
                   placeholder=" Enter email"
+                  defaultValue={user?.email}
                   className="input input-bordered"
                   required
                 />
@@ -148,6 +150,7 @@ const AddReviewInput = () => {
                 <input
                   type="text"
                   name="username"
+                  defaultValue={user?.displayName}
                   placeholder="Enter user name"
                   className="input input-bordered"
                   required
