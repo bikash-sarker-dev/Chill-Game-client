@@ -1,6 +1,40 @@
-import React from "react";
+import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../contextAip/ContextCreate";
+import Rating from "../home/rating/Rating";
 
 const Details = () => {
+  const { user } = useContext(AuthContext);
+  const getData = useLoaderData();
+  const detailsPro = getData[0];
+
+  const watchInfo = {
+    username: user.displayName,
+    email: user.email,
+  };
+
+  const handleWatchList = () => {
+    fetch("http://localhost:8000/watchlist", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(watchInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Successfully",
+            text: " The Watch List Add username and email.",
+            icon: "success",
+          });
+        }
+      });
+  };
+
   return (
     <section>
       <div
@@ -20,30 +54,40 @@ const Details = () => {
       <div className="hero bg-base-200 min-h-screen">
         <div className="flex-col my-20">
           <img
-            src="https://i.pcmag.com/imagery/lineups/06dxdkd5h3MmSKAaMczRpbQ-1..v1569492889.jpg"
-            className=" my-10 rounded-lg shadow-2xl"
+            src={detailsPro?.thumbnail}
+            className=" my-10 rounded-lg shadow-2xl md:min-w-[700px] lg:max-h-[700px]"
           />
           <div>
-            <h1 className="text-4xl font-bold">Box Office News!</h1>
+            <h1 className="text-4xl font-bold">{detailsPro?.title}</h1>
             <div className="max-w-lg flex justify-between mt-3">
-              <p className="text-gray-500 mt-2 font-medium">Author: name</p>
-              <p className="text-gray-500 mt-2 font-medium">Email: name</p>
+              <p className="text-gray-500 mt-2 font-medium">
+                Author: {detailsPro?.username}
+              </p>
+              <p className="text-gray-500 mt-2 font-medium">
+                Email: {detailsPro?.email}
+              </p>
             </div>
             <div className="max-w-lg flex justify-between mt-4">
               <p className="text-gray-500 mt-2 font-medium">
-                Publish Year: name
+                Publish Year: {detailsPro?.publishYear}
               </p>
-              <p className="text-gray-500 mt-2 font-medium">Genres: name</p>
+              <p className="text-gray-500 mt-2 font-medium">
+                Genres: {detailsPro?.genres}
+              </p>
             </div>
-            <p className="text-gray-500 mt-4 font-bold">Rating: name</p>
-
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <p className="text-gray-500 mt-4 font-bold flex items-center gap-5">
+              Rating: <Rating ratingNumber={detailsPro?.rating} />{" "}
             </p>
 
-            <button className="btn btn-primary">Get Started</button>
+            <p className="py-6 mx-w-5xl">{detailsPro?.description}</p>
+            {user && user?.email && (
+              <button
+                onClick={handleWatchList}
+                className="btn btn-info  my-8 px-10"
+              >
+                Add to WatchList
+              </button>
+            )}
           </div>
         </div>
       </div>

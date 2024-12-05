@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Rating from "../rating/Rating";
 
 const CardHighestRated = ({ review }) => {
   const {
+    _id,
     title,
     rating,
     publishYear,
@@ -29,7 +31,9 @@ const CardHighestRated = ({ review }) => {
         </h4>
       </div>
       <div className="w-1.5/6">
-        <button className="btn btn-primary ">Explore Details</button>
+        <Link to={`/details/${_id}`} className="btn btn-primary ">
+          Explore Details
+        </Link>
       </div>
     </div>
   );
