@@ -1,12 +1,31 @@
 import { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const RegisterForm = () => {
   const [passShow, setPassShow] = useState(false);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const username = form.username.value;
+    const photo_Url = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const newObj = { username, photo_Url, email, password };
+
+    const validation = /^(?=.*[a-z])(?=.*[A-Z]).{6,16}$/;
+    if (!validation.test(password)) {
+      toast.warn(
+        "the password must be at least 6 character, must be Uppercase and Lowercase "
+      );
+      return;
+    }
+  };
   return (
     <div className="card bg-base-100 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
-      <form className="card-body">
+      <form onSubmit={handleRegister} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">User Name</span>

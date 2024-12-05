@@ -1,8 +1,11 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contextAip/ContextCreate";
 import NavItems from "./NavItems";
 
 const Navbar = () => {
+  const { name } = useContext(AuthContext);
+
   return (
     <div className="container">
       <div className="navbar bg-base-100 my-3">
