@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contextAip/ContextCreate";
 
@@ -8,6 +8,8 @@ const LoginForm = () => {
   const [passShow, setPassShow] = useState(false);
   const { accountLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -29,7 +31,9 @@ const LoginForm = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            navigate("/");
+            {
+              location.state ? navigate(location.state) : navigate("/");
+            }
           });
         form.reset();
       })
