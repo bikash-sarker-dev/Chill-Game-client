@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../../contextAip/ContextCreate";
@@ -7,12 +7,13 @@ import NavItems from "./NavItems";
 
 const Navbar = () => {
   const { user, accountLogOut } = useContext(AuthContext);
-  console.log(user);
+  const navigate = useNavigate();
 
   const logOut = () => {
     accountLogOut()
       .then(() => {
         toast.success("Your LogOut Successfully !");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
