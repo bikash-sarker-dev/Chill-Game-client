@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import AllCard from "./AllCard";
 
-const AllReviews = ({ review }) => {
+const AllReviews = () => {
   const AllGetData = useLoaderData();
   return (
     <section>
