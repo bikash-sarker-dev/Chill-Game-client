@@ -35,6 +35,8 @@ const MyReviews = () => {
                 index={i}
                 key={reviewItem._id}
                 reviewItem={reviewItem}
+                myReview={myReview}
+                setMyReview={setMyReview}
               />
             ))}
           </tbody>

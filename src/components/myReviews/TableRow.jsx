@@ -2,8 +2,38 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const TableRow = ({ index, reviewItem }) => {
+const TableRow = ({ index, reviewItem, myReview, setMyReview }) => {
+  const handleMyReviewDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:8000/my-review/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 1) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+            }
+            let deleteFilter = myReview.filter((review) => review._id !== id);
+            setMyReview(deleteFilter);
+          });
+      }
+    });
+  };
   return (
     <tr className="hover">
       <th>{index + 1}</th>
@@ -28,7 +58,10 @@ const TableRow = ({ index, reviewItem }) => {
         >
           <FaPencil className="text-xl " />
         </Link>
-        <button className="btn bg-red-600 text-[#fff]">
+        <button
+          onClick={() => handleMyReviewDelete(reviewItem._id)}
+          className="btn bg-red-600 text-[#fff]"
+        >
           <FaTimes className="text-xl  " />
         </button>
       </td>
