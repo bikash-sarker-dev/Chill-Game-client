@@ -7,7 +7,7 @@ const MyReviews = () => {
   const [myReview, setMyReview] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/reviews/${user?.email}`)
+    fetch(`https://chill-gamer-server-ten.vercel.app/reviews/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyReview(data);

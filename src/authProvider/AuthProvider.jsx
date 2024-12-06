@@ -5,12 +5,13 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { AuthContext } from "../contextAip/ContextCreate";
+import { AuthContext, ThemeContext } from "../contextAip/ContextCreate";
 import auth from "../firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(true);
 
   const accountRegister = (email, password) => {
     setLoading(true);
@@ -23,6 +24,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const accountLogOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -46,7 +48,11 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={provideInfo}>{children}</AuthContext.Provider>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+      <AuthContext.Provider value={provideInfo}>
+        {children}
+      </AuthContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 

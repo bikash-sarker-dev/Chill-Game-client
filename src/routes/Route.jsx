@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import AddReviewPage from "../pages/AddReviewPage";
 import AllReviewsPage from "../pages/AllReviewsPage";
+import ErrorPage from "../pages/ErrorPage";
 import GameWatchListPage from "../pages/GameWatchListPage";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
@@ -17,22 +18,29 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <HomePage />,
-        loader: () => fetch("http://localhost:8000/reviews/highest-rated"),
+        loader: () =>
+          fetch(
+            "https://chill-gamer-server-ten.vercel.app/reviews/highest-rated"
+          ),
       },
       {
         path: "/all-reviews",
         element: <AllReviewsPage />,
-        loader: () => fetch("http://localhost:8000/reviews"),
+        loader: () =>
+          fetch("https://chill-gamer-server-ten.vercel.app/reviews"),
       },
       {
         path: "/details/:id",
         element: <ReviewDetailsPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:8000/details/${params.id}`),
+          fetch(
+            `https://chill-gamer-server-ten.vercel.app/details/${params.id}`
+          ),
       },
       {
         path: "/add-review",
@@ -54,7 +62,9 @@ const router = createBrowserRouter([
         path: "/updateReview/:id",
         element: <UpdateReviewPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:8000/update/${params.id}`),
+          fetch(
+            `https://chill-gamer-server-ten.vercel.app/update/${params.id}`
+          ),
       },
       {
         path: "/watchlist",

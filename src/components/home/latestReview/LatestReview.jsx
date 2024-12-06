@@ -5,7 +5,7 @@ const LatestReview = () => {
   const [latest, setLatest] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/reviews/latest")
+    fetch("https://chill-gamer-server-ten.vercel.app/reviews/latest")
       .then((res) => res.json())
       .then((data) => setLatest(data));
   }, []);

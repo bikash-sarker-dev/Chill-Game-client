@@ -7,3 +7,6 @@
 body {
   font-family: "Open Sans", serif;
 }
+.dark {
+  @apply bg-[#171923] text-white;
+}

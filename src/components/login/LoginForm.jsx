@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../contextAip/ContextCreate";
 
 const LoginForm = () => {
-  const [passShow, setPassShow] = useState(false);
-  const { accountLogin } = useContext(AuthContext);
+  const [passShow, setPassShow] = useState(true);
+  const { accountLogin, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -22,7 +22,7 @@ const LoginForm = () => {
         const user = loginData.user;
 
         const lastSignInTime = user.metadata?.lastSignInTime;
-        fetch(`http://localhost:8000/users/${email}`, {
+        fetch(`https://chill-gamer-server-ten.vercel.app/users/${email}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -41,16 +41,17 @@ const LoginForm = () => {
         const errorMessage = error.message;
         if (errorMessage.includes("auth/invalid-credential")) {
           toast.warn("the Email and password not match. please try again .");
+          setLoading(false);
         }
       });
   };
 
   return (
-    <div className="card bg-base-100 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
+    <div className="card bg-base-100 dark:bg-slate-600 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
       <form onSubmit={handleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text dark:text-gray-200">Email</span>
           </label>
           <input
             type="email"
@@ -62,7 +63,7 @@ const LoginForm = () => {
         </div>
         <div className="form-control relative">
           <label className="label">
-            <span className="label-text ">Password</span>
+            <span className="label-text   dark:text-gray-200">Password</span>
           </label>
           <input
             type={passShow ? "text" : "password"}

@@ -1,12 +1,16 @@
 import { useContext } from "react";
+import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tooltip";
-import { AuthContext } from "../../../contextAip/ContextCreate";
+import { AuthContext, ThemeContext } from "../../../contextAip/ContextCreate";
 import NavItems from "./NavItems";
 
 const Navbar = () => {
   const { user, accountLogOut } = useContext(AuthContext);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+  console.log(darkMode);
+
   const navigate = useNavigate();
 
   const logOut = () => {
@@ -21,7 +25,7 @@ const Navbar = () => {
   };
   return (
     <div className="container">
-      <div className="navbar bg-base-100 my-3">
+      <div className="navbar  py-6">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +58,15 @@ const Navbar = () => {
             <NavItems />
           </ul>
         </div>
-        <div className="navbar-end ">
+        <div className="navbar-end space-x-6 ">
+          <button onClick={() => setDarkMode((darkMode) => !darkMode)}>
+            {darkMode ? (
+              <MdOutlineLightMode className="text-4xl dark:text-base-400" />
+            ) : (
+              <MdOutlineDarkMode className="text-4xl text-gary-600  " />
+            )}
+          </button>
+
           {user && user?.email ? (
             <div className="space-x-3 flex items-center">
               <Tooltip anchorSelect=".my-anchor-element" place="left">

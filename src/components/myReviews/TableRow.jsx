@@ -16,7 +16,7 @@ const TableRow = ({ index, reviewItem, myReview, setMyReview }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:8000/my-review/${id}`, {
+        fetch(`https://chill-gamer-server-ten.vercel.app/my-review/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -35,7 +35,7 @@ const TableRow = ({ index, reviewItem, myReview, setMyReview }) => {
     });
   };
   return (
-    <tr className="hover">
+    <tr className="hover dark:hover:text-gray-900">
       <th>{index + 1}</th>
       <td>
         <div className="avatar">

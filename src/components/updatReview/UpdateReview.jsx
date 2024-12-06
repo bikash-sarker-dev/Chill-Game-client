@@ -31,13 +31,16 @@ const UpdateReview = () => {
     };
     console.log(newObject);
 
-    fetch(`http://localhost:8000/update/${previousValue._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newObject),
-    })
+    fetch(
+      `https://chill-gamer-server-ten.vercel.app/update/${previousValue._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newObject),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -26,7 +26,7 @@ const AddReviewInput = () => {
       description,
     };
 
-    fetch("http://localhost:8000/reviews", {
+    fetch("https://chill-gamer-server-ten.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -46,15 +46,16 @@ const AddReviewInput = () => {
       });
   };
   return (
-    <section>
-      <h2 className="text-4xl font-bold text-center my-16">Add Reviews </h2>
+    <section className="my-24">
       <div className="container">
-        <div className="card bg-base-100 w-full max-w-4xl mx-auto shrink-0 shadow-2xl mb-10">
+        <div className="card bg-base-100 dark:bg-slate-600  w-full max-w-4xl mx-auto shrink-0 shadow-2xl mb-10">
           <form onSubmit={handleAddReview} className="card-body">
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text">Game Title</span>
+                  <span className="label-text dark:text-gray-200">
+                    Game Title
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -66,7 +67,9 @@ const AddReviewInput = () => {
               </div>
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text">Publishing year</span>
+                  <span className="label-text dark:text-gray-200">
+                    Publishing year
+                  </span>
                 </label>
                 <input
                   name="publishYear"
@@ -83,7 +86,7 @@ const AddReviewInput = () => {
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text">Genres</span>
+                  <span className="label-text dark:text-gray-200">Genres</span>
                 </label>
                 <select
                   name="genres"
@@ -115,7 +118,7 @@ const AddReviewInput = () => {
               </div>
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text">Rating</span>
+                  <span className="label-text dark:text-gray-200">Rating</span>
                 </label>
                 <input
                   name="rating"
@@ -132,7 +135,7 @@ const AddReviewInput = () => {
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text dark:text-gray-200">Email</span>
                 </label>
                 <input
                   type="email"
@@ -145,7 +148,9 @@ const AddReviewInput = () => {
               </div>
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text">User Name</span>
+                  <span className="label-text dark:text-gray-200">
+                    User Name
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -159,7 +164,9 @@ const AddReviewInput = () => {
             </div>
             <div className="form-control ">
               <label className="label">
-                <span className="label-text">Game Cover Image/Thumbnail</span>
+                <span className="label-text dark:text-gray-200">
+                  Game Cover Image/Thumbnail
+                </span>
               </label>
               <input
                 type="text"
@@ -171,7 +178,9 @@ const AddReviewInput = () => {
             </div>
             <div className="form-control ">
               <label className="label">
-                <span className="label-text">Review Description</span>
+                <span className="label-text dark:text-gray-200">
+                  Review Description
+                </span>
               </label>
 
               <textarea
@@ -184,7 +193,7 @@ const AddReviewInput = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Add Review</button>
+              <button className="btn btn-info">Add Review</button>
             </div>
           </form>
         </div>

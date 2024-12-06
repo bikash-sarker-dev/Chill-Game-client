@@ -18,7 +18,7 @@ const Details = () => {
   console.log(detailsPro);
 
   const handleWatchList = () => {
-    fetch("http://localhost:8000/watchlist", {
+    fetch("https://chill-gamer-server-ten.vercel.app/watchlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,7 +38,7 @@ const Details = () => {
   };
 
   return (
-    <section>
+    <section className="bg-base-200 ">
       <div
         style={{
           background: `url(https://t4.ftcdn.net/jpg/06/09/68/87/360_F_609688709_cYztwjColm1AK7aiXMR1LvlgPItluPA4.jpg)`,
@@ -53,7 +53,7 @@ const Details = () => {
           Details Review
         </h2>
       </div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero min-h-screen container">
         <div className="flex-col my-20">
           <img
             src={detailsPro?.thumbnail}
@@ -81,7 +81,7 @@ const Details = () => {
               Rating: <Rating ratingNumber={detailsPro?.rating} />{" "}
             </p>
 
-            <p className="py-6 mx-w-5xl">{detailsPro?.description}</p>
+            <p className="py-6 max-w-3xl">{detailsPro?.description}</p>
             {user && user?.email && (
               <button
                 onClick={handleWatchList}

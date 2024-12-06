@@ -14,7 +14,7 @@ const CardLatest = ({ newReview }) => {
   } = newReview;
   return (
     <div>
-      <div className="card bg-base-100  shadow-xl">
+      <div className="card bg-base-100 dark:bg-slate-600  shadow-xl">
         <figure>
           <img
             className="w-full object-cover max-h-60"
@@ -27,10 +27,10 @@ const CardLatest = ({ newReview }) => {
             {title}
             <div className="badge badge-secondary ml-auto">NEW</div>
           </h2>
-          <p className="text-gray-500">Author: {username}</p>
+          <p className="text-gray-500 dark:text-gray-300">Author: {username}</p>
           <div className="card-actions justify-between">
             <div className="">
-              <span className="text-gray-500">
+              <span className="text-gray-500 dark:text-gray-300">
                 Published Year: {publishYear}
               </span>
             </div>

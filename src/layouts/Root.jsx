@@ -1,15 +1,20 @@
-import React from "react";
+import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
+import { AuthContext, ThemeContext } from "../contextAip/ContextCreate";
+import SpinnerPage from "../pages/SpinnerPage";
 
 const Root = () => {
+  const { loading } = useContext(AuthContext);
+  const { darkMode } = useContext(ThemeContext);
+
   return (
-    <div>
+    <div className={`${darkMode ? "dark" : ""}`}>
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -20,7 +25,8 @@ const Root = () => {
         theme="dark"
       />
       <Header />
-      <Outlet />
+      {loading ? <SpinnerPage /> : <Outlet />}
+
       <Footer />
     </div>
   );

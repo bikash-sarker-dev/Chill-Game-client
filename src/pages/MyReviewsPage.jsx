@@ -1,10 +1,11 @@
 import React from "react";
 import MyReviews from "../components/myReviews/MyReviews";
+import HeroPages from "../components/pageHeading/HeroPages";
 
 const MyReviewsPage = () => {
   return (
     <main>
-      <h1>my r</h1>
+      <HeroPages title="My Reviews" />
       <MyReviews />
     </main>
   );

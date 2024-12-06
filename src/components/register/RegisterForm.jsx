@@ -39,7 +39,7 @@ const RegisterForm = () => {
         updateProfile(user, updateDat)
           .then(() => {
             setUser(user);
-            fetch("http://localhost:8000/users", {
+            fetch("https://chill-gamer-server-ten.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -70,11 +70,11 @@ const RegisterForm = () => {
       });
   };
   return (
-    <div className="card bg-base-100 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
+    <div className="card bg-base-100 w-full dark:bg-slate-600  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
       <form onSubmit={handleRegister} className="card-body">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">User Name</span>
+            <span className="label-text dark:text-gray-200">User Name</span>
           </label>
           <input
             type="text"
@@ -86,7 +86,7 @@ const RegisterForm = () => {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Photo Url</span>
+            <span className="label-text dark:text-gray-200">Photo Url</span>
           </label>
           <input
             type="text"
@@ -98,7 +98,7 @@ const RegisterForm = () => {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text dark:text-gray-200">Email</span>
           </label>
           <input
             type="email"
@@ -110,7 +110,7 @@ const RegisterForm = () => {
         </div>
         <div className="form-control relative">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text dark:text-gray-200">Password</span>
           </label>
           <input
             type={passShow ? "text" : "password"}

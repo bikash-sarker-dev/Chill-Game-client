@@ -4,7 +4,7 @@ import Rating from "../home/rating/Rating";
 
 const AllCard = ({ review }) => {
   return (
-    <div className="card bg-base-100  shadow-xl">
+    <div className="card bg-base-100 dark:bg-slate-600 shadow-xl">
       <figure className="px-10 pt-10">
         <img
           src={review?.thumbnail}
@@ -15,8 +15,10 @@ const AllCard = ({ review }) => {
       <div className="card-body">
         <div className="flex justify-between items-center">
           <div className="">
-            <h2 className="text-xl font-semibold">{review?.title}</h2>
-            <p className="text-gray-500 my-4 ">Genres: {review?.genres}</p>
+            <h2 className="text-xl font-semibold ">{review?.title}</h2>
+            <p className="dark:text-white text-gray-500 my-4 ">
+              Genres: {review?.genres}
+            </p>
           </div>
           <div>
             <span className="text-gray-500">
