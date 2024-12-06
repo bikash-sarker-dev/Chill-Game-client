@@ -8,6 +8,7 @@ import LoginPage from "../pages/LoginPage";
 import MyReviewsPage from "../pages/MyReviewsPage";
 import RegisterPage from "../pages/RegisterPage";
 import ReviewDetailsPage from "../pages/ReviewDetailsPage";
+import UpdateReviewPage from "../pages/UpdateReviewPage";
 import PrivateAddReviewsRoute from "./PrivateAddReviewsRoute";
 import PrivateMyReviewsRoute from "./PrivateMyReviewsRoute";
 import PrivateWatchListRoute from "./PrivateWatchListRoute";
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
             <MyReviewsPage />
           </PrivateMyReviewsRoute>
         ),
+      },
+      {
+        path: "/updateReview/:id",
+        element: <UpdateReviewPage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:8000/update/${params.id}`),
       },
       {
         path: "/watchlist",

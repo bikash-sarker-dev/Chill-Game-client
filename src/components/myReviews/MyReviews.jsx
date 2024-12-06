@@ -14,8 +14,6 @@ const MyReviews = () => {
       });
   }, []);
 
-  console.log(myReview);
-
   return (
     <section className="my-32">
       <div className="overflow-x-auto container">

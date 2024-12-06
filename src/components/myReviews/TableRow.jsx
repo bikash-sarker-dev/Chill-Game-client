@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const TableRow = ({ index, reviewItem }) => {
   return (
@@ -21,9 +22,12 @@ const TableRow = ({ index, reviewItem }) => {
       <td>{reviewItem?.email}</td>
       <td>{reviewItem?.rating}</td>
       <td className="space-x-4">
-        <button className="btn btn-info btn-outline">
+        <Link
+          to={`/updateReview/${reviewItem._id}`}
+          className="btn btn-info btn-outline"
+        >
           <FaPencil className="text-xl " />
-        </button>
+        </Link>
         <button className="btn bg-red-600 text-[#fff]">
           <FaTimes className="text-xl  " />
         </button>
