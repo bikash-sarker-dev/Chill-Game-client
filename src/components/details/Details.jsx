@@ -10,9 +10,12 @@ const Details = () => {
   const detailsPro = getData[0];
 
   const watchInfo = {
-    username: user?.displayName,
-    email: user?.email,
+    ...detailsPro,
+    adminName: user?.displayName,
+    adminEmail: user?.email,
   };
+
+  console.log(detailsPro);
 
   const handleWatchList = () => {
     fetch("http://localhost:8000/watchlist", {

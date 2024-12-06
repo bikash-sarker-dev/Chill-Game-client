@@ -148,7 +148,7 @@ const UpdateReview = () => {
                   placeholder=" Enter email"
                   defaultValue={user?.email}
                   className="input input-bordered"
-                  required
+                  disabled
                 />
               </div>
               <div className="form-control md:w-1/2">
@@ -161,7 +161,7 @@ const UpdateReview = () => {
                   defaultValue={user?.displayName}
                   placeholder="Enter user name"
                   className="input input-bordered"
-                  required
+                  disabled
                 />
               </div>
             </div>
