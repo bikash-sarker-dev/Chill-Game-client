@@ -9,7 +9,6 @@ import NavItems from "./NavItems";
 const Navbar = () => {
   const { user, accountLogOut } = useContext(AuthContext);
   const { darkMode, setDarkMode } = useContext(ThemeContext);
-  console.log(darkMode);
 
   const navigate = useNavigate();
 
@@ -51,7 +50,9 @@ const Navbar = () => {
               <NavItems />
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Chill Gamer</a>
+          <div className="">
+            <img className="w-14" src="./gLogo.png" alt="" />
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

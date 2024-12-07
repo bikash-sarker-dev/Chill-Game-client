@@ -1,4 +1,5 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import TournamentImg from "../../../assets/images/touranment.jpg";
 
 const Tournament = () => {
@@ -10,28 +11,30 @@ const Tournament = () => {
       }}
       className="bg-center py-32 bg-blend-overlay bg-fixed"
     >
-      <div className="container">
-        <div className="hero ">
-          <div className="hero-content flex-col lg:flex-row-reverse text-white">
-            <img
-              src={TournamentImg}
-              className="max-w-xg rounded-lg shadow-2xl "
-            />
-            <div>
-              <h1 className="text-5xl font-bold">Gaming Tournaments</h1>
-              <p className="py-6 text-gray-300">
-                Quis nostrum exercitationem ullam corporis suscit labor iosam,
-                nisi ut aliquid ex ea commodi conse aute irure dolor in
-                reprehenderit in voluptateesse occaecat cuida at non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulle ariatur
-              </p>
-              <button className="btn btn-primary">Read More</button>
+      <Fade direction="up">
+        <div className="container">
+          <div className="hero ">
+            <div className="hero-content flex-col lg:flex-row-reverse text-white">
+              <img
+                src={TournamentImg}
+                className="max-w-xg rounded-lg shadow-2xl "
+              />
+              <div>
+                <h1 className="text-5xl font-bold">Gaming Tournaments</h1>
+                <p className="py-6 text-gray-300">
+                  Quis nostrum exercitationem ullam corporis suscit labor iosam,
+                  nisi ut aliquid ex ea commodi conse aute irure dolor in
+                  reprehenderit in voluptateesse occaecat cuida at non proident,
+                  sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulle ariatur
+                </p>
+                <button className="btn btn-primary">Read More</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Fade>
     </section>
   );
 };

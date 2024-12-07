@@ -1,3 +1,4 @@
+import { Typewriter } from "react-simple-typewriter";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -6,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Slide1 from "../../../assets/images/slider/game-slide1.jpg";
 import Slide2 from "../../../assets/images/slider/game-slide2.jpg";
 import Slide3 from "../../../assets/images/slider/game-slide3.jpg";
+import Star from "./Star";
 
 const HeroSlider = () => {
   return (
@@ -15,7 +17,7 @@ const HeroSlider = () => {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -44,14 +46,24 @@ const HeroSlider = () => {
 
                   <div className="text-white w-1/3 ml-10">
                     <h1 className="text-5xl font-bold">
-                      The Witcher Arcade Game
+                      <Typewriter
+                        words={["The Witcher Arcade Game"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                      />
                     </h1>
+
                     <p className="py-6">
                       Gwent on Android is a rebalanced iteration of The Witcher
                       3: Wild Hunt's addictive, multiplayer card game. It
                       combines deck building with clever strategy, giving you a
                       robust selection of combat and support units.
                     </p>
+                    <Star />
                   </div>
                 </div>
               </div>
@@ -69,7 +81,15 @@ const HeroSlider = () => {
                 <div className="flex gap-6 justify-center items-center ">
                   <div className="text-white w-1/3 ml-10">
                     <h1 className="text-5xl font-bold">
-                      Rocket League Sideswipe
+                      <Typewriter
+                        words={["Rocket League Sideswipe"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                      />
                     </h1>
                     <p className="py-6">
                       Rocket League combines soccer, rocket-powered cars, and
@@ -80,6 +100,7 @@ const HeroSlider = () => {
                       sacrificing the nuance that makes the full game so
                       engrossing.
                     </p>
+                    <Star />
                   </div>
                   <div className="w-1/3">
                     <img
@@ -109,7 +130,17 @@ const HeroSlider = () => {
                   </div>
 
                   <div className="text-white w-1/3 ml-10">
-                    <h1 className="text-5xl font-bold">Metaphor ReFantazio</h1>
+                    <h1 className="text-5xl font-bold">
+                      <Typewriter
+                        words={["Metaphor ReFantazio"]}
+                        loop={false}
+                        cursor
+                        cursorStyle="_"
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                      />
+                    </h1>
                     <p className="py-6">
                       It’s always a difficult task to follow up on what some
                       people consider to be one of the greatest games of all
@@ -119,6 +150,7 @@ const HeroSlider = () => {
                       Studio Zero division which has been comprised of ex
                       Persona talent.
                     </p>
+                    <Star />
                   </div>
                 </div>
               </div>

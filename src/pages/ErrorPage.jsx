@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HeadHtmlTitle from "../components/pageHeading/HeadHtmlTitle";
 
 const ErrorPage = () => {
   return (
     <main>
+      <HeadHtmlTitle title="Game | Error" />
       <section className="flex  justify-center items-center w-full h-screen text-center">
         <div>
           <h1 className="font-extrabold text-sky-500 text-[130px]">404</h1>
