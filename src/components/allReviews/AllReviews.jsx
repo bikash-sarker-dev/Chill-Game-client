@@ -8,6 +8,7 @@ import {
   descendingOrderYear,
 } from "../../utilities/sorting";
 import AllCard from "./AllCard";
+import GenresFilter from "./GenresFilter";
 
 const AllReviews = () => {
   const AllGetData = useLoaderData();
@@ -65,12 +66,7 @@ const AllReviews = () => {
               Genres Filter <FaAngleDown className="text-2xl" />
             </summary>
             <ul className="menu  dark:text-gray-900 dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
+              <GenresFilter setAllReviews={setAllReviews} />
             </ul>
           </details>
         </div>
