@@ -1,4 +1,5 @@
 import React from "react";
+import { Zoom } from "react-awesome-reveal";
 
 const HeroPages = ({ title }) => {
   return (
@@ -13,9 +14,11 @@ const HeroPages = ({ title }) => {
       className="bg-bottom py-32 bg-blend-overlay text-center "
     >
       <div className="container">
-        <h2 className="text-5xl text-center text-white font-bold">
-          {title} Page
-        </h2>
+        <Zoom>
+          <h2 className="text-5xl text-center text-white font-bold">
+            {title} Page
+          </h2>
+        </Zoom>
       </div>
     </section>
   );

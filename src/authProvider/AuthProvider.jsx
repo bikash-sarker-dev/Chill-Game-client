@@ -48,11 +48,11 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      <AuthContext.Provider value={provideInfo}>
+    <AuthContext.Provider value={provideInfo}>
+      <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
         {children}
-      </AuthContext.Provider>
-    </ThemeContext.Provider>
+      </ThemeContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
