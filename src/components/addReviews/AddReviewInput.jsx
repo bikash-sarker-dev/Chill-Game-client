@@ -61,7 +61,7 @@ const AddReviewInput = () => {
                   type="text"
                   name="title"
                   placeholder="Game Title"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
@@ -77,7 +77,7 @@ const AddReviewInput = () => {
                   min="1990"
                   max="2099"
                   placeholder="Enter publishing year"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
@@ -86,11 +86,11 @@ const AddReviewInput = () => {
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
-                  <span className="label-text dark:text-gray-200">Genres</span>
+                  <span className="label-text dark:text-gray-200 ">Genres</span>
                 </label>
                 <select
                   name="genres"
-                  className="select select-bordered w-full "
+                  className="select select-bordered w-full text-gray-900"
                   defaultValue={`DEFAULT`}
                 >
                   <option key={1} value="DEFAULT" disabled selected>
@@ -126,7 +126,7 @@ const AddReviewInput = () => {
                   min="1"
                   max="5"
                   placeholder="Enter rating number"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
@@ -142,7 +142,7 @@ const AddReviewInput = () => {
                   name="email"
                   placeholder=" Enter email"
                   defaultValue={user?.email}
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
@@ -157,7 +157,7 @@ const AddReviewInput = () => {
                   name="username"
                   defaultValue={user?.displayName}
                   placeholder="Enter user name"
-                  className="input input-bordered"
+                  className="input input-bordered text-gray-900"
                   required
                 />
               </div>
@@ -172,7 +172,7 @@ const AddReviewInput = () => {
                 type="text"
                 name="thumbnail"
                 placeholder=" Enter Game Cover Image/Thumbnail"
-                className="input input-bordered"
+                className="input input-bordered text-gray-900"
                 required
               />
             </div>
@@ -184,7 +184,7 @@ const AddReviewInput = () => {
               </label>
 
               <textarea
-                className="input input-bordered h-44"
+                className="input input-bordered text-gray-900 h-44"
                 placeholder=" Enter Review Description"
                 name="description"
                 rows="10"

@@ -15,8 +15,6 @@ const Details = () => {
     adminEmail: user?.email,
   };
 
-  console.log(detailsPro);
-
   const handleWatchList = () => {
     fetch("https://chill-gamer-server-ten.vercel.app/watchlist", {
       method: "POST",
@@ -38,7 +36,7 @@ const Details = () => {
   };
 
   return (
-    <section className="bg-base-200 ">
+    <section className="">
       <div
         style={{
           background: `url(https://t4.ftcdn.net/jpg/06/09/68/87/360_F_609688709_cYztwjColm1AK7aiXMR1LvlgPItluPA4.jpg)`,

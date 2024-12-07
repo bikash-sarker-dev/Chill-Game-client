@@ -19,6 +19,9 @@ const AllCard = ({ review }) => {
             <p className="dark:text-white text-gray-500 my-4 ">
               Genres: {review?.genres}
             </p>
+            <p className="dark:text-white text-gray-500 my-4 ">
+              PublishYear: {review?.publishYear}
+            </p>
           </div>
           <div>
             <span className="text-gray-500">
