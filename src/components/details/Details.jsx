@@ -5,7 +5,7 @@ import { AuthContext } from "../../contextAip/ContextCreate";
 import Rating from "../home/rating/Rating";
 
 const Details = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setLoading } = useContext(AuthContext);
   const getData = useLoaderData();
   const detailsPro = getData[0];
 
@@ -16,6 +16,7 @@ const Details = () => {
   };
 
   const handleWatchList = () => {
+    setLoading(true);
     fetch("https://chill-gamer-server-ten.vercel.app/watchlist", {
       method: "POST",
       headers: {
@@ -25,6 +26,7 @@ const Details = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setLoading(false);
         if (data.insertedId) {
           Swal.fire({
             title: "Successfully",

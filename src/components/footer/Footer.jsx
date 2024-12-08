@@ -1,9 +1,20 @@
 import React from "react";
+import { FaRegCopyright } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300">
-      <div className="footer container  text-base-content p-10 ">
+    <footer className="bg-base-300 dark:bg-black dark:text-white pt-12">
+      <div className="footer container dark:text-white text-base-content p-10 ">
+        <aside>
+          <img className="w-28" src="./gLogo.png" alt="" />
+          <p className="max-w-sm text-gray-700 dark:text-white">
+            Build Chill Gamer, a user-friendly game review application. The goal
+            of this project is to design a platform where users can explore and
+            share game reviews. You need to develop key features such as user
+            authentication and review management to enhance the user experience.
+          </p>
+        </aside>
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -13,10 +24,21 @@ const Footer = () => {
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to="/" className="link link-hover">
+            Home
+          </Link>
+          <Link to="/all-reviews" className="link link-hover">
+            All Reviews
+          </Link>
+          <Link to="/add-review" className="link link-hover">
+            Add Reviews
+          </Link>
+          <Link to="/my-reviews" className="link link-hover">
+            My Reviews
+          </Link>
+          <Link to="/watchlist" className="link link-hover">
+            Game watch List
+          </Link>
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>
@@ -56,6 +78,14 @@ const Footer = () => {
             </a>
           </div>
         </nav>
+      </div>
+      <div className="footer dark:bg-black footer-center bg-base-300 text-base-content p-4 border-t py-10 dark:border-gray-800 border-gray-300">
+        <aside>
+          <p className="flex items-center dark:text-white">
+            Copyright <FaRegCopyright className="mx-1 text-lg" />{" "}
+            {new Date().getFullYear()} - All right reserved by Chill Gamer
+          </p>
+        </aside>
       </div>
     </footer>
   );

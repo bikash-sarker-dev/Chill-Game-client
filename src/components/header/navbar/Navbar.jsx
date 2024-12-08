@@ -43,7 +43,7 @@ const Navbar = () => {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="h-5 w-5 dark-extra-color"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -58,7 +58,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[999] mt-3 w-52 p-2 shadow "
+                className="menu menu-sm dropdown-content bg-gray-500 rounded-box z-[999] mt-3 w-52 p-2 shadow "
               >
                 <NavItems />
               </ul>
@@ -77,7 +77,7 @@ const Navbar = () => {
               {darkMode ? (
                 <MdOutlineLightMode className="text-4xl dark:text-base-400" />
               ) : (
-                <MdOutlineDarkMode className="text-4xl text-gary-600  " />
+                <MdOutlineDarkMode className="text-4xl text-gary-600 dark-extra-color " />
               )}
             </button>
 

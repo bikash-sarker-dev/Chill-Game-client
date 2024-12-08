@@ -4,11 +4,12 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../contextAip/ContextCreate";
 
 const UpdateReview = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setLoading } = useContext(AuthContext);
   const getUpData = useLoaderData();
   const previousValue = getUpData[0];
 
   const handleUpdateReview = (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -43,7 +44,7 @@ const UpdateReview = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setLoading(false);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Successfully",
