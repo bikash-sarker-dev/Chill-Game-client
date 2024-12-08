@@ -13,7 +13,7 @@ const WatchList = () => {
   }, []);
 
   return (
-    <section className="my-32">
+    <section className="my-32 px-3 lg:px-0">
       <div className="container">
         {watchList.map((watchItem) => (
           <CardWatchList key={watchItem._id} watchReview={watchItem} />

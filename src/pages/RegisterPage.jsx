@@ -5,7 +5,7 @@ import RegisterForm from "../components/register/RegisterForm";
 
 const RegisterPage = () => {
   return (
-    <main>
+    <main className="px-3 lg:px-0">
       <HeadHtmlTitle title="Game | Register" />
       <LoginHead title="Get started with easily register" />
       <RegisterForm />

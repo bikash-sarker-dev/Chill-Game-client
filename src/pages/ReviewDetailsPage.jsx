@@ -4,7 +4,7 @@ import HeadHtmlTitle from "../components/pageHeading/HeadHtmlTitle";
 
 const ReviewDetailsPage = () => {
   return (
-    <main>
+    <main className="px-3 lg:px-0">
       <HeadHtmlTitle title="Game | Details Reviews" />
       <Details />
     </main>

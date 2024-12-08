@@ -58,13 +58,13 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[999] mt-3 w-52 p-2 shadow "
               >
                 <NavItems />
               </ul>
             </div>
             <div className="">
-              <img className="w-14" src="./gLogo.png" alt="" />
+              <img className="w-14 hidden sm:block" src="./gLogo.png" alt="" />
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -97,21 +97,21 @@ const Navbar = () => {
 
                 <button
                   onClick={logOut}
-                  className="btn btn-outline btn-info uppercase"
+                  className="btn btn-sm sm:btn-md btn-outline btn-info uppercase"
                 >
                   LogOut
                 </button>
               </div>
             ) : (
-              <div className="space-x-3">
+              <div className="space-x-3 flex md:flex-row">
                 <Link
-                  className="btn btn-outline btn-info uppercase"
+                  className="btn btn-outline btn-sm sm:btn-md btn-info uppercase"
                   to="/login"
                 >
                   Login
                 </Link>
                 <Link
-                  className="btn btn-outline btn-info uppercase "
+                  className="btn btn-sm sm:btn-md btn-outline btn-info uppercase "
                   to="/register"
                 >
                   Register

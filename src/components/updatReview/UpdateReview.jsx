@@ -57,8 +57,8 @@ const UpdateReview = () => {
     <section>
       <h2 className="text-4xl font-bold text-center my-16">Update Reviews </h2>
       <div className="container">
-        <div className="card bg-base-100 w-full max-w-4xl mx-auto shrink-0 shadow-2xl mb-10">
-          <form onSubmit={handleUpdateReview} className="card-body">
+        <div className="card bg-base-100 dark:bg-slate-600 w-full max-w-4xl mx-auto shrink-0 shadow-2xl mb-10">
+          <form onSubmit={handleUpdateReview} className="card-body p-3 md:p-10">
             <div className="md:flex gap-4">
               <div className="form-control md:w-1/2">
                 <label className="label">
@@ -69,7 +69,7 @@ const UpdateReview = () => {
                   name="title"
                   defaultValue={previousValue?.title}
                   placeholder="Game Title"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -84,7 +84,7 @@ const UpdateReview = () => {
                   max="2099"
                   defaultValue={previousValue?.publishYear}
                   placeholder="Enter publishing year"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -97,7 +97,7 @@ const UpdateReview = () => {
                 </label>
                 <select
                   name="genres"
-                  className="select select-bordered w-full "
+                  className="select select-bordered w-full text-black"
                   defaultValue={previousValue?.genres}
                 >
                   <option key={1} disabled selected>
@@ -134,7 +134,7 @@ const UpdateReview = () => {
                   max="5"
                   defaultValue={previousValue?.rating}
                   placeholder="Enter rating number"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   required
                 />
               </div>
@@ -150,7 +150,7 @@ const UpdateReview = () => {
                   name="email"
                   placeholder=" Enter email"
                   defaultValue={user?.email}
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   disabled
                 />
               </div>
@@ -163,7 +163,7 @@ const UpdateReview = () => {
                   name="username"
                   defaultValue={user?.displayName}
                   placeholder="Enter user name"
-                  className="input input-bordered"
+                  className="input input-bordered text-black"
                   disabled
                 />
               </div>
@@ -177,7 +177,7 @@ const UpdateReview = () => {
                 name="thumbnail"
                 defaultValue={previousValue?.thumbnail}
                 placeholder=" Enter Game Cover Image/Thumbnail"
-                className="input input-bordered"
+                className="input input-bordered text-black"
                 required
               />
             </div>
@@ -187,7 +187,7 @@ const UpdateReview = () => {
               </label>
 
               <textarea
-                className="input input-bordered h-44"
+                className="input input-bordered text-black h-44"
                 placeholder=" Enter Review Description"
                 name="description"
                 defaultValue={previousValue?.description}
@@ -197,7 +197,7 @@ const UpdateReview = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Update Review</button>
+              <button className="btn btn-info">Update Review</button>
             </div>
           </form>
         </div>

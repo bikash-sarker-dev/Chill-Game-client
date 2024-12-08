@@ -5,19 +5,29 @@ const NavItems = () => {
   return (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink className="text-black dark:lg:text-white" to="/">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/all-reviews">AllReviews</NavLink>
+        <NavLink className="text-black dark:lg:text-white" to="/all-reviews">
+          AllReviews
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/add-review">Add review</NavLink>
+        <NavLink className="text-black dark:lg:text-white" to="/add-review">
+          Add review
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/my-reviews">My Reviews</NavLink>
+        <NavLink className="text-black dark:lg:text-white" to="/my-reviews">
+          My Reviews
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/watchlist">Game WatchList</NavLink>
+        <NavLink className="text-black dark:lg:text-white" to="/watchlist">
+          Game WatchList
+        </NavLink>
       </li>
     </>
   );

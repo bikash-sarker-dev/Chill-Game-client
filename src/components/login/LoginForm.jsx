@@ -47,8 +47,8 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="card bg-base-100 dark:bg-slate-600 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
-      <form onSubmit={handleLogin} className="card-body">
+    <div className="card bg-base-100 dark:bg-slate-600 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32 ">
+      <form onSubmit={handleLogin} className="card-body p-3 md:p-10">
         <div className="form-control">
           <label className="label">
             <span className="label-text dark:text-gray-200">Email</span>
@@ -88,10 +88,10 @@ const LoginForm = () => {
         </div>
       </form>
       <div className="text-center mb-6">
-        <p className="text-gray-500">
+        <p className="text-gray-500 dark:text-white">
           New User ?{" "}
           <Link
-            className="text-blue-600 font-semibold underline"
+            className="text-blue-600 dark:text-orange-600 font-semibold underline"
             to="/register"
           >
             SIGN UP HERE

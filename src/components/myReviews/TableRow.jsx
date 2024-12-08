@@ -35,9 +35,9 @@ const TableRow = ({ index, reviewItem, myReview, setMyReview }) => {
     });
   };
   return (
-    <tr className="hover dark:hover:text-gray-900">
-      <th>{index + 1}</th>
-      <td>
+    <tr className="hover dark:hover:text-gray-900 tr-class">
+      <th className="td-class">{index + 1}</th>
+      <td className="td-class">
         <div className="avatar">
           <div className="mask  h-20 w-32 rounded-lg">
             <img
@@ -47,20 +47,20 @@ const TableRow = ({ index, reviewItem, myReview, setMyReview }) => {
           </div>
         </div>
       </td>
-      <td>{reviewItem?.title}</td>
-      <td>{reviewItem?.username}</td>
-      <td>{reviewItem?.email}</td>
-      <td>{reviewItem?.rating}</td>
-      <td className="space-x-4">
+      <td className="td-class">{reviewItem?.title}</td>
+      <td className="td-class">{reviewItem?.username}</td>
+      <td className="td-class">{reviewItem?.email}</td>
+      <td className="td-class">{reviewItem?.rating}</td>
+      <td className="xl:space-x-4 td-class">
         <Link
           to={`/updateReview/${reviewItem._id}`}
-          className="btn btn-info btn-outline"
+          className="btn btn-info btn-sm xl:btn-md btn-outline"
         >
           <FaPencil className="text-xl " />
         </Link>
         <button
           onClick={() => handleMyReviewDelete(reviewItem._id)}
-          className="btn bg-red-600 text-[#fff]"
+          className="btn bg-red-600 btn-sm xl:btn-md mt-3 xl:mt-0 text-[#fff]"
         >
           <FaTimes className="text-xl  " />
         </button>

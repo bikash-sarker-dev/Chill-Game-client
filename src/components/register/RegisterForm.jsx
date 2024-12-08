@@ -71,7 +71,7 @@ const RegisterForm = () => {
   };
   return (
     <div className="card bg-base-100 w-full dark:bg-slate-600  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
-      <form onSubmit={handleRegister} className="card-body">
+      <form onSubmit={handleRegister} className="card-body px-3 md:px-10">
         <div className="form-control">
           <label className="label">
             <span className="label-text dark:text-gray-200">User Name</span>
@@ -138,9 +138,12 @@ const RegisterForm = () => {
         </div>
       </form>
       <div className="text-center mb-6">
-        <p className="text-gray-500">
+        <p className="text-gray-500 dark:text-white ">
           Already have an account ?{" "}
-          <Link className="text-blue-600 font-semibold underline" to="/login">
+          <Link
+            className="text-blue-600 font-semibold dark:text-orange-600  underline"
+            to="/login"
+          >
             LOGIN HERE
           </Link>{" "}
         </p>

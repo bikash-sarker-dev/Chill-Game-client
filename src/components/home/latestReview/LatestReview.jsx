@@ -12,7 +12,7 @@ const LatestReview = () => {
   }, []);
 
   return (
-    <section className="my-24 mb-40">
+    <section className="my-24 mb-40 px-3 lg:px-0">
       <div className="container">
         <Fade direction="up">
           <div className="text-center mb-20">

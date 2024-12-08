@@ -46,7 +46,7 @@ const AddReviewInput = () => {
       });
   };
   return (
-    <section className="my-24">
+    <section className="my-24 px-3 lg:px-0">
       <div className="container">
         <div className="card bg-base-100 dark:bg-slate-600  w-full max-w-4xl mx-auto shrink-0 shadow-2xl mb-10">
           <form onSubmit={handleAddReview} className="card-body">

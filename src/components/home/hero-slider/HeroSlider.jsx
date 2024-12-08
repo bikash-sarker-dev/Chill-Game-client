@@ -33,19 +33,19 @@ const HeroSlider = () => {
                 background: `url(${Slide1})`,
                 backgroundColor: "rgba(0,0,0,0.9)",
               }}
-              className="bg-center py-32 bg-blend-overlay  h-[750px]"
+              className="bg-center lg:py-32 py-14 bg-blend-overlay lg:h-[750px]  px-5 lg:px-0"
             >
               <div className="container ">
-                <div className="flex gap-6 justify-center items-center ">
-                  <div className="w-1/3">
+                <div className="lg:flex  gap-6 justify-center items-center ">
+                  <div className="lg:w-1/3">
                     <img
                       src="https://m.media-amazon.com/images/I/71s1XRBOaFL.jpg"
-                      className="max-w-[550px] h-[440px] rounded-lg shadow-2xl"
+                      className="xl:max-w-[550px] xl:h-[440px] rounded-lg shadow-2xl"
                     />
                   </div>
 
-                  <div className="text-white w-1/3 ml-10">
-                    <h1 className="text-5xl font-bold">
+                  <div className="text-white lg:w-1/3 lg:ml-10">
+                    <h1 className="text-3xl md:text-5xl mt-5 md:mt-0 font-bold">
                       <Typewriter
                         words={["The Witcher Arcade Game"]}
                         loop={false}
@@ -75,12 +75,12 @@ const HeroSlider = () => {
                 background: `url(${Slide2})`,
                 backgroundColor: "rgba(0,0,0,0.8)",
               }}
-              className="bg-center py-32 bg-blend-overlay  h-[750px]"
+              className="bg-center lg:py-32 py-14 bg-blend-overlay  lg:h-[750px] px-5 lg:px-0"
             >
               <div className="container ">
-                <div className="flex gap-6 justify-center items-center ">
-                  <div className="text-white w-1/3 ml-10">
-                    <h1 className="text-5xl font-bold">
+                <div className="flex flex-col-reverse lg:flex-row gap-6 justify-center items-center ">
+                  <div className="text-white lg:w-1/3 lg:ml-10">
+                    <h1 className="text-3xl md:text-5xl mt-5 md:mt-0 font-bold">
                       <Typewriter
                         words={["Rocket League Sideswipe"]}
                         loop={false}
@@ -102,10 +102,10 @@ const HeroSlider = () => {
                     </p>
                     <Star />
                   </div>
-                  <div className="w-1/3">
+                  <div className="lg:w-1/3">
                     <img
                       src="https://thewhyofplay.com/wp-content/uploads/2022/01/cover.png"
-                      className="max-w-[550px] h-[440px] rounded-lg shadow-2xl"
+                      className="xl:max-w-[550px] xl:h-[440px] rounded-lg shadow-2xl"
                     />
                   </div>
                 </div>
@@ -118,19 +118,19 @@ const HeroSlider = () => {
                 background: `url(${Slide3})`,
                 backgroundColor: "rgba(0,0,0,0.8)",
               }}
-              className="bg-center py-32 bg-blend-overlay  h-[750px]"
+              className="bg-center lg:py-32 py-14 bg-blend-overlay  lg:h-[750px] px-5 lg:px-0"
             >
               <div className="container ">
-                <div className="flex gap-6 justify-center items-center ">
-                  <div className="w-1/3">
+                <div className="lg:flex gap-6 justify-center items-center ">
+                  <div className="lg:w-1/3">
                     <img
                       src="https://hb.imgix.net/0007cb3df8899e39ade2974714b47d8196b840f1.png?auto=compress,format&fit=crop&h=353&w=616&s=6c19438529b3fb0c59d3fddffa768e6c"
-                      className="max-w-[550px] h-[440px] rounded-lg shadow-2xl"
+                      className="xl:max-w-[550px] xl:h-[440px] rounded-lg shadow-2xl"
                     />
                   </div>
 
-                  <div className="text-white w-1/3 ml-10">
-                    <h1 className="text-5xl font-bold">
+                  <div className="text-white lg:w-1/3 lg:ml-10">
+                    <h1 className="text-3xl md:text-5xl mt-5 md:mt-0 font-bold">
                       <Typewriter
                         words={["Metaphor ReFantazio"]}
                         loop={false}

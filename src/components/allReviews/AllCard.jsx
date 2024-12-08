@@ -7,14 +7,14 @@ const AllCard = ({ review }) => {
   return (
     <Fade direction="up">
       <div className="card bg-base-100 dark:bg-slate-600 shadow-xl">
-        <figure className="px-10 pt-10">
+        <figure className="md:px-10 px-3 md:pt-10 mt-5">
           <img
             src={review?.thumbnail}
             alt="Shoes"
             className="rounded-xl h-[220px] w-full"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body px-3 md:px-10">
           <div className="flex justify-between items-center">
             <div className="">
               <h2 className="text-xl font-semibold ">{review?.title}</h2>
