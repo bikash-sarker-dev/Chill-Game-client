@@ -4,8 +4,6 @@
 
 The name of this application is chill Gamer . The purpose of this application is to thoroughly discuss and review games.Then we can add and delete game reviews if we want in this application and we can put them in the watch list. From here, we can see which tournament game we want and its description is given and from there we can give some concepts. We can see the top rated games in this application and we can also see if there are any new games. If we want, we can see all reviews and all user games from the All Reviews page. If we want, we can see the details from here and if we want from there, there is a button called Tag List. If we click here, we can become an watch list. This is what you hear about authentication and the future of this authentication is to login and register after that. Now we can add a review, update it, and even delete it. Here we have some map items in our member and on the right shirt we have an image of a user and when hovered over it will show the user's name. And is there an icon next to it for dark mode and light mode.
 
-Currently, two official plugins are available:
-
 #### My Server GitHub private repositories link:
 
 - [https://github.com/programming-hero-web-course2/b10-a10-server-side-bikash-sarker-dev.git](https://github.com/programming-hero-web-course2/b10-a10-server-side-bikash-sarker-dev.git)
