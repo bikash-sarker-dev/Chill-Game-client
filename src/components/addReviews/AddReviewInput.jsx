@@ -3,8 +3,9 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../contextAip/ContextCreate";
 
 const AddReviewInput = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setLoading } = useContext(AuthContext);
   const handleAddReview = (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -35,6 +36,7 @@ const AddReviewInput = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setLoading(false);
         if (data.insertedId) {
           Swal.fire({
             title: "Successfully ?",

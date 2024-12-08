@@ -1,7 +1,7 @@
 import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contextAip/ContextCreate";
@@ -9,6 +9,7 @@ import { AuthContext } from "../../contextAip/ContextCreate";
 const RegisterForm = () => {
   const [passShow, setPassShow] = useState(false);
   const { accountRegister, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -54,6 +55,7 @@ const RegisterForm = () => {
                     text: "this is account created . Enjoy your application",
                     icon: "success",
                   });
+                  navigate("/");
                 }
               });
           })
