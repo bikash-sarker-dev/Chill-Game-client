@@ -18,11 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <HomePage />,
+        errorElement: <ErrorPage />,
         loader: () =>
           fetch(
             "https://chill-gamer-server-ten.vercel.app/reviews/highest-rated"
@@ -31,12 +31,14 @@ const router = createBrowserRouter([
       {
         path: "/all-reviews",
         element: <AllReviewsPage />,
+        errorElement: <ErrorPage />,
         loader: () =>
           fetch("https://chill-gamer-server-ten.vercel.app/reviews"),
       },
       {
         path: "/details/:id",
         element: <ReviewDetailsPage />,
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(
             `https://chill-gamer-server-ten.vercel.app/details/${params.id}`
@@ -44,6 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-review",
+        errorElement: <ErrorPage />,
         element: (
           <PrivateAddReviewsRoute>
             <AddReviewPage />
@@ -52,6 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-reviews",
+        errorElement: <ErrorPage />,
         element: (
           <PrivateMyReviewsRoute>
             <MyReviewsPage />
@@ -61,6 +65,7 @@ const router = createBrowserRouter([
       {
         path: "/updateReview/:id",
         element: <UpdateReviewPage />,
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(
             `https://chill-gamer-server-ten.vercel.app/update/${params.id}`
@@ -68,6 +73,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/watchlist",
+        errorElement: <ErrorPage />,
         element: (
           <PrivateWatchListRoute>
             <GameWatchListPage />
@@ -77,10 +83,12 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/register",
         element: <RegisterPage />,
+        errorElement: <ErrorPage />,
       },
     ],
   },
