@@ -17,8 +17,25 @@ body {
   background: #ffffff;
 }
 .dark {
-  @apply bg-[#171923] text-white;
+  @apply bg-[#171923] text-[#fff];
 }
+
+/* @layer base {
+  :root {
+    --text: #060f0b;
+    --background: #f4fbf7;
+    --primary: #4fc488;
+    --secondary: #88ddb1;
+    --accent: #65d79c;
+  }
+  .dark {
+    --text: #f0f9f5;
+    --background: #040b07;
+    --primary: #3bb073;
+    --secondary: #22774b;
+    --accent: #289a5f;
+  }
+} */
 
 .sticky {
   position: fixed;
