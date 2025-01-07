@@ -72,7 +72,7 @@ const RegisterForm = () => {
       });
   };
   return (
-    <div className="card bg-base-100 w-full dark:bg-slate-600  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
+    <div className="card bg-p-background w-full   shrink-0 shadow-2xl max-w-4xl mx-auto mb-32">
       <form onSubmit={handleRegister} className="card-body px-3 md:px-10">
         <div className="form-control">
           <label className="label">
@@ -82,7 +82,7 @@ const RegisterForm = () => {
             type="text"
             name="username"
             placeholder="Enter user name"
-            className="p-3 border-b text-gray-900 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
+            className="p-3 border-b dark:text-p-text border-p-secondary  focus:outline-none focus:border-p-secondary focus:ring-sky-500"
             required
           />
         </div>
@@ -94,7 +94,7 @@ const RegisterForm = () => {
             type="text"
             name="photo"
             placeholder="Enter photo url"
-            className="p-3 border-b text-gray-900 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
+            className="p-3 border-b dark:text-p-text border-p-secondary  focus:outline-none focus:border-p-secondary focus:ring-sky-500"
             required
           />
         </div>
@@ -106,7 +106,7 @@ const RegisterForm = () => {
             type="email"
             name="email"
             placeholder="Enter email"
-            className="p-3 border-b text-gray-900 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
+            className="p-3 border-b dark:text-p-text border-p-secondary  focus:outline-none focus:border-p-secondary focus:ring-sky-500"
             required
           />
         </div>
@@ -118,7 +118,7 @@ const RegisterForm = () => {
             type={passShow ? "text" : "password"}
             name="password"
             placeholder="password"
-            className="p-3 border-b text-gray-900 focus:outline-none focus:border-sky-500 focus:ring-sky-500"
+            className="p-3 border-b dark:text-p-text border-p-secondary  focus:outline-none focus:border-p-secondary focus:ring-sky-500"
             required
           />
           <div className="absolute  right-5  dark:top-12 top-9 ">
@@ -128,22 +128,22 @@ const RegisterForm = () => {
             >
               {" "}
               {passShow ? (
-                <FaRegEyeSlash className="text-2xl text-gray-900" />
+                <FaRegEyeSlash className="text-2xl " />
               ) : (
-                <FaRegEye className="text-2xl text-gray-900" />
+                <FaRegEye className="text-2xl " />
               )}
             </span>
           </div>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-info">Register</button>
+          <button className="btn bg-p-primary">Register</button>
         </div>
       </form>
       <div className="text-center mb-6">
-        <p className="text-gray-500 dark:text-white ">
+        <p className="text-gray-500 dark:text-dark-p-background ">
           Already have an account ?{" "}
           <Link
-            className="text-blue-600 font-semibold dark:text-orange-600  underline"
+            className="text-blue-600 font-semibold dark:text-p-primary  underline"
             to="/login"
           >
             LOGIN HERE

@@ -25,7 +25,7 @@ const LoginHead = ({ title }) => {
       });
   };
   return (
-    <div className="container text-center mt-32 mb-20">
+    <div className="container text-center mt-32 mb-20 py-14">
       <h2 className="text-4xl font-bold">{title}</h2>
       <div className="sm:space-x-6 my-5">
         <button

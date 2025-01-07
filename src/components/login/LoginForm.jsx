@@ -47,7 +47,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="card bg-base-100 dark:bg-slate-600 w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32 ">
+    <div className="card  bg-p-background w-full  shrink-0 shadow-2xl max-w-4xl mx-auto mb-32 ">
       <form onSubmit={handleLogin} className="card-body p-3 md:p-10">
         <div className="form-control">
           <label className="label">
@@ -57,7 +57,7 @@ const LoginForm = () => {
             type="email"
             name="email"
             placeholder="Enter email"
-            className="p-3 border-b text-gray-900 focus:outline-none focus:border-sky-500   focus:ring-sky-500"
+            className="p-3 border-b dark:text-p-text border-p-secondary focus:outline-none focus:border-sky-500   focus:ring-sky-500"
             required
           />
         </div>
@@ -69,33 +69,33 @@ const LoginForm = () => {
             type={passShow ? "text" : "password"}
             name="password"
             placeholder="password"
-            className="p-3 border-b focus:outline-none focus:border-sky-500 text-gray-900 focus:ring-sky-500"
+            className="p-3 border-b dark:text-p-text border-p-secondary focus:outline-none focus:border-sky-500  focus:ring-sky-500"
             required
           />
           <div className="absolute  right-5 top-9 dark:top-12 ">
             <span onClick={() => setPassShow(!passShow)}>
               {" "}
               {passShow ? (
-                <FaRegEyeSlash className="text-2xl text-gray-900" />
+                <FaRegEyeSlash className="text-2xl " />
               ) : (
-                <FaRegEye className="text-2xl text-gray-900" />
+                <FaRegEye className="text-2xl " />
               )}
             </span>
           </div>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-info">Login</button>
+          <button className="btn bg-p-primary border-none">Login</button>
         </div>
       </form>
       <div className="text-center mb-6">
-        <p className="text-gray-500 dark:text-white">
-          New User ?{" "}
+        <p className="text-gray-500 dark:text-dark-mode-bg">
+          New User ?
           <Link
-            className="text-blue-600 dark:text-orange-600 font-semibold underline"
+            className="text-blue-600  font-semibold underline"
             to="/register"
           >
             SIGN UP HERE
-          </Link>{" "}
+          </Link>
         </p>
       </div>
     </div>
