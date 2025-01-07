@@ -37,9 +37,9 @@ const AllReviews = () => {
   return (
     <section className="px-3 lg:px-0">
       <div className="container">
-        <div className=" md:flex justify-between  mt-10 ">
+        <div className=" md:flex justify-between  mt-10 bg-p-background dark:bg-dark-p-background p-6 border border-p-secondary dark:border-dark-p-secondary rounded-md">
           <details className="dropdown w-full md:w-auto">
-            <summary className="btn lg:m-1 btn-info md:w-auto w-full  btn-outline uppercase">
+            <summary className="btn lg:m-1 hover:bg-dark-p-secondary hover:text-p-background border-none md:w-auto w-full  bg-p-primary uppercase">
               Sorting Reviews <FaAngleDown className="text-2xl" />
             </summary>
             <ul className="menu md:w-auto w-full dark:text-gray-900 dropdown-content bg-base-100 rounded-box z-[1] lg:w-52 p-2 shadow">
@@ -62,7 +62,7 @@ const AllReviews = () => {
             </ul>
           </details>
           <details className="dropdown w-full md:w-auto mt-5 md:mt-0">
-            <summary className="btn lg:m-1 btn-info md:w-auto w-full  btn-outline uppercase">
+            <summary className="btn lg:m-1  md:w-auto w-full border-none  hover:bg-dark-p-secondary hover:text-p-background  bg-p-primary uppercase">
               Genres Filter <FaAngleDown className="text-2xl" />
             </summary>
             <ul className="menu md:w-auto w-full  dark:text-gray-900 dropdown-content bg-base-100 rounded-box z-[1] lg:w-52 p-2 shadow">

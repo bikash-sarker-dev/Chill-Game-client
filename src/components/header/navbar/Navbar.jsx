@@ -99,7 +99,7 @@ const Navbar = () => {
 
                 <button
                   onClick={logOut}
-                  className="btn btn-sm sm:btn-md btn-outline btn-info uppercase"
+                  className="btn btn-sm sm:btn-md bg-dark-p-secondary border-none text-dark-p-text uppercase"
                 >
                   LogOut
                 </button>

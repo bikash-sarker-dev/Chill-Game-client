@@ -54,13 +54,13 @@ const TableRow = ({ index, reviewItem, myReview, setMyReview }) => {
       <td className="xl:space-x-4 td-class">
         <Link
           to={`/updateReview/${reviewItem._id}`}
-          className="btn btn-info btn-sm xl:btn-md btn-outline"
+          className="btn bg-dark-p-secondary text-dark-p-text btn-sm xl:btn-md "
         >
           <FaPencil className="text-xl " />
         </Link>
         <button
           onClick={() => handleMyReviewDelete(reviewItem._id)}
-          className="btn bg-red-600 btn-sm xl:btn-md mt-3 xl:mt-0 text-[#fff]"
+          className="btn bg-red-600 btn-sm xl:btn-md mt-3 bg-[#dc2626] xl:mt-0 text-[#fff]"
         >
           <FaTimes className="text-xl  " />
         </button>

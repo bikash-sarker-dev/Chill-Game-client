@@ -19,7 +19,7 @@ const MyReviews = () => {
       <div className="overflow-x-auto container">
         <table className="table">
           <thead>
-            <tr className="bg-slate-500 text-lg text-base-100">
+            <tr className="bg-slate-500 text-lg  dark:text-base-100 bg-p-secondary">
               <th>No</th>
               <th>Photo</th>
               <th>Title</th>

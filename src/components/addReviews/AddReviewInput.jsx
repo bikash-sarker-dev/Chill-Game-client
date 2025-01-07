@@ -195,7 +195,9 @@ const AddReviewInput = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-info">Add Review</button>
+              <button className="btn bg-p-primary border-none hover:bg-dark-p-secondary hover:text-dark-p-text">
+                Add Review
+              </button>
             </div>
           </form>
         </div>

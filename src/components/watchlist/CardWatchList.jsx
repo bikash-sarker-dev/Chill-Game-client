@@ -6,7 +6,7 @@ import Rating from "../home/rating/Rating";
 const CardWatchList = ({ watchReview }) => {
   return (
     <Fade direction="up">
-      <div className="card sm:card-side bg-base-100 shadow-xl border p-3 my-5 dark:bg-slate-600">
+      <div className="card sm:card-side border-p-secondary bg-p-background dark:bg-dark-p-background dark:border-dark-p-secondary shadow-xl border p-3 my-5 dark:bg-slate-600">
         <figure>
           <img
             src={watchReview?.thumbnail}
@@ -28,7 +28,7 @@ const CardWatchList = ({ watchReview }) => {
             </p>
             <Link
               to={`/details/${watchReview?._id}`}
-              className="btn btn-info btn-outline w-full sm:w-auto"
+              className="btn bg-p-primary border-none hover:bg-dark-p-secondary hover:text-dark-p-text w-full sm:w-auto"
             >
               Explore Details
             </Link>

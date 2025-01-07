@@ -15,7 +15,7 @@ const HeroPages = ({ title }) => {
     >
       <div className="container">
         <Zoom>
-          <h2 className="text-5xl text-center text-white font-bold">
+          <h2 className="text-5xl text-center text-p-background font-bold">
             {title} Page
           </h2>
         </Zoom>
