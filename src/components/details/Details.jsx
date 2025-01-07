@@ -8,12 +8,16 @@ const Details = () => {
   const { user, setLoading } = useContext(AuthContext);
   const getData = useLoaderData();
   const detailsPro = getData[0];
+  let { _id: newId } = detailsPro;
 
   const watchInfo = {
-    ...detailsPro,
+    newId: newId,
     adminName: user?.displayName,
     adminEmail: user?.email,
+    ...detailsPro,
   };
+
+  delete watchInfo._id;
 
   const handleWatchList = () => {
     setLoading(true);

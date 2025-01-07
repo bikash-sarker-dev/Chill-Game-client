@@ -7,6 +7,12 @@
 body {
   font-family: "Open Sans", serif;
 }
+
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
 .swiper-pagination span {
   background: #ffffff;
 }
