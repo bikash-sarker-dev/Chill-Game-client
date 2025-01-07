@@ -4,11 +4,11 @@ import { FaStar } from "react-icons/fa";
 const Star = () => {
   return (
     <div className="flex gap-2">
-      <FaStar className="text-3xl text-yellow-500" />
-      <FaStar className="text-3xl text-yellow-500" />
-      <FaStar className="text-3xl text-yellow-500" />
-      <FaStar className="text-3xl text-yellow-500" />
-      <FaStar className="text-3xl text-yellow-500" />
+      <FaStar className="text-3xl text-p-primary" />
+      <FaStar className="text-3xl text-p-primary" />
+      <FaStar className="text-3xl text-p-primary" />
+      <FaStar className="text-3xl text-p-primary" />
+      <FaStar className="text-3xl text-p-primary" />
     </div>
   );
 };

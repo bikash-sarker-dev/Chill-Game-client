@@ -10,7 +10,7 @@ const HighestRated = () => {
     <section className="my-24 px-3 lg:px-0">
       <Fade direction="up">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold">Highest Rated Game</h2>
+          <h2 className="text-5xl font-bold">Highest Rated Game</h2>
           <p className="text-gray-500 max-w-md mx-auto mt-3">
             the reviews highest rating for games. there are best performance in
             games .

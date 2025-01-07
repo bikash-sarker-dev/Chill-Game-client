@@ -31,9 +31,11 @@ const Navbar = () => {
   });
 
   return (
-    <div className={`${scroll ? "sticky w-full bg-gray-900" : ""}`}>
+    <div
+      className={`${scroll ? "sticky w-full bg-gray-900" : ""} bg-p-primary`}
+    >
       <div className="container">
-        <div className="navbar  py-6">
+        <div className="navbar  py-5">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -105,13 +107,13 @@ const Navbar = () => {
             ) : (
               <div className="space-x-3 flex md:flex-row">
                 <Link
-                  className="btn btn-outline btn-sm sm:btn-md btn-info uppercase"
+                  className="btn btn-outline btn-sm sm:btn-md bg-dark-p-secondary border-none text-dark-p-text uppercase"
                   to="/login"
                 >
                   Login
                 </Link>
                 <Link
-                  className="btn btn-sm sm:btn-md btn-outline btn-info uppercase "
+                  className="btn btn-sm sm:btn-md bg-dark-p-secondary border-none text-dark-p-text  uppercase "
                   to="/register"
                 >
                   Register

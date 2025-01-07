@@ -16,7 +16,7 @@ const CardLatest = ({ newReview }) => {
   return (
     <Fade direction="up">
       <div>
-        <div className="card bg-base-100 dark:bg-slate-600  shadow-xl">
+        <div className="card bg-base-100 dark:bg-slate-600  shadow-xl border border-p-secondary bg-p-background dark:bg-dark-p-background dark:border-dark-p-secondary">
           <figure>
             <img
               className="w-full object-cover max-h-60"

@@ -74,12 +74,6 @@ body {
     margin-right: 5px;
   }
 }
-/* .tr-class {
-  @apply flex border rounded-xl flex-col mb-4 lg:table-row;
-}
-.td-class {
-  @apply px-4 py-3  first:rounded-t-lg last:rounded-b-lg sm:first:rounded-t-none sm:last:rounded-b-none sm:first:rounded-tl-lg sm:first:rounded-bl-lg sm:last:rounded-tr-lg sm:last:rounded-br-lg;
-} */
 
 .testimonials .swiper-button-next,
 .testimonials .swiper-button-prev {

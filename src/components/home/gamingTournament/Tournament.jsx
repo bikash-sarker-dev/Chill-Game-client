@@ -1,5 +1,4 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
 import TournamentImg from "../../../assets/images/touranment.jpg";
 
 const Tournament = () => {
@@ -11,32 +10,32 @@ const Tournament = () => {
       }}
       className="bg-center py-32 bg-blend-overlay bg-fixed"
     >
-      <Fade direction="up">
-        <div className="container">
-          <div className="hero ">
-            <div className="hero-content flex-col lg:flex-row-reverse text-white">
-              <img
-                src={TournamentImg}
-                className="lg:max-w-xg rounded-lg shadow-2xl "
-              />
-              <div>
-                <h1 className="lg:text-5xl text-3xl font-bold">
-                  Gaming Tournaments
-                </h1>
-                <p className="py-6 text-gray-300">
-                  Quis nostrum exercitationem ullam corporis suscit labor iosam,
-                  nisi ut aliquid ex ea commodi conse aute irure dolor in
-                  reprehenderit in voluptateesse occaecat cuida at non proident,
-                  sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulle ariatur
-                </p>
-                <button className="btn btn-info btn-outline ">Read More</button>
-              </div>
+      <div className="container">
+        <div className="hero ">
+          <div className="hero-content flex-col lg:flex-row-reverse text-white">
+            <img
+              src={TournamentImg}
+              className="lg:max-w-xg rounded-lg shadow-2xl "
+            />
+            <div>
+              <h1 className="lg:text-5xl text-3xl font-bold">
+                Gaming Tournaments
+              </h1>
+              <p className="py-6 text-gray-300">
+                Quis nostrum exercitationem ullam corporis suscit labor iosam,
+                nisi ut aliquid ex ea commodi conse aute irure dolor in
+                reprehenderit in voluptateesse occaecat cuida at non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulle ariatur
+              </p>
+              <button className="btn  bg-p-primary border-none uppercase">
+                Read More
+              </button>
             </div>
           </div>
         </div>
-      </Fade>
+      </div>
     </section>
   );
 };

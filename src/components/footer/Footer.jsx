@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300 dark:bg-black dark:text-white pt-12">
+    <footer className="bg-p-background  dark:text-white pt-12">
       <div className="footer container dark:text-white text-base-content p-10 ">
         <aside>
           <img className="w-28" src="./gLogo.png" alt="" />
@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <div className="footer dark:bg-black footer-center bg-base-300 text-base-content p-4 border-t py-10 dark:border-gray-800 border-gray-300">
+      <div className="footer bg-p-secondary dark:bg-black footer-center  text-base-content p-4 border-t py-10 dark:border-p-primary border-y-p-secondary">
         <aside>
           <p className="flex items-center dark:text-white">
             Copyright <FaRegCopyright className="mx-1 text-lg" />{" "}

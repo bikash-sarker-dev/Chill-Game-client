@@ -1,48 +1,43 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import Rating from "../home/rating/Rating";
 
 const AllCard = ({ review }) => {
   return (
-    <Fade direction="up">
-      <div className="card bg-base-100 dark:bg-slate-600 shadow-xl">
-        <figure className="md:px-10 px-3 md:pt-10 mt-5">
-          <img
-            src={review?.thumbnail}
-            alt="Shoes"
-            className="rounded-xl h-[220px] w-full"
-          />
-        </figure>
-        <div className="card-body px-3 md:px-10">
-          <div className="flex justify-between items-center">
-            <div className="">
-              <h2 className="text-xl font-semibold ">{review?.title}</h2>
-              <p className="dark:text-white text-gray-500 my-4 ">
-                Genres: {review?.genres}
-              </p>
-              <p className="dark:text-white text-gray-500 my-4 ">
-                PublishYear: {review?.publishYear}
-              </p>
-            </div>
-            <div>
-              <span className="text-gray-500">
-                <Rating ratingNumber={review?.rating} />
-              </span>
-            </div>
-          </div>
+    <div className="card  dark:bg-slate-600 border-p-secondary bg-p-background dark:bg-dark-p-background dark:border-dark-p-secondary shadow-sm shadow-p-secondary">
+      <figure className="">
+        <img
+          src={review?.thumbnail}
+          alt="Shoes"
+          className=" h-[220px] w-full"
+        />
+      </figure>
+      <div className="card-body px-3 md:px-10">
+        <div className="">
+          <div className="">
+            <h2 className="text-xl font-semibold ">{review?.title}</h2>
 
-          <div className="card-actions">
-            <Link
-              to={`/details/${review?._id}`}
-              className="btn btn-info btn-outline btn-block"
-            >
-              Explore Details
-            </Link>
+            <p className="dark:text-white text-gray-500 my-4 ">
+              PublishYear: {review?.publishYear}
+            </p>
+          </div>
+          <div>
+            <span className="text-gray-500">
+              <Rating ratingNumber={review?.rating} />
+            </span>
           </div>
         </div>
+
+        <div className="card-actions">
+          <Link
+            to={`/details/${review?._id}`}
+            className="btn bg-p-primary border-none btn-block"
+          >
+            Explore Details
+          </Link>
+        </div>
       </div>
-    </Fade>
+    </div>
   );
 };
 

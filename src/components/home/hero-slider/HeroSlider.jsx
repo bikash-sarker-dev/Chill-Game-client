@@ -37,15 +37,15 @@ const HeroSlider = () => {
             >
               <div className="container ">
                 <div className="lg:flex  gap-6 justify-center items-center ">
-                  <div className="lg:w-1/3">
+                  <div className="lg:flex-1">
                     <img
                       src="https://m.media-amazon.com/images/I/71s1XRBOaFL.jpg"
                       className="xl:max-w-[550px] xl:h-[440px] rounded-lg shadow-2xl"
                     />
                   </div>
 
-                  <div className="text-white lg:w-1/3 lg:ml-10">
-                    <h1 className="text-3xl md:text-5xl mt-5 md:mt-0 font-bold">
+                  <div className="text-white lg:flex-1 lg:ml-10">
+                    <h1 className="text-3xl text-p-background md:text-5xl mt-5 md:mt-0 font-bold">
                       <Typewriter
                         words={["The Witcher Arcade Game"]}
                         loop={false}
@@ -57,7 +57,7 @@ const HeroSlider = () => {
                       />
                     </h1>
 
-                    <p className="py-6">
+                    <p className="py-6 text-p-background ">
                       Gwent on Android is a rebalanced iteration of The Witcher
                       3: Wild Hunt's addictive, multiplayer card game. It
                       combines deck building with clever strategy, giving you a
@@ -80,7 +80,7 @@ const HeroSlider = () => {
               <div className="container ">
                 <div className="flex flex-col-reverse lg:flex-row gap-6 justify-center items-center ">
                   <div className="text-white lg:w-1/3 lg:ml-10">
-                    <h1 className="text-3xl md:text-5xl mt-5 md:mt-0 font-bold">
+                    <h1 className="text-3xl text-p-background  md:text-5xl mt-5 md:mt-0 font-bold">
                       <Typewriter
                         words={["Rocket League Sideswipe"]}
                         loop={false}
@@ -91,7 +91,7 @@ const HeroSlider = () => {
                         delaySpeed={1000}
                       />
                     </h1>
-                    <p className="py-6">
+                    <p className="py-6 text-p-background ">
                       Rocket League combines soccer, rocket-powered cars, and
                       billiards in one frenzied, multiplayer sport for console
                       and PC. Rocket League Sideswipe, on the other hand, brings
@@ -122,15 +122,15 @@ const HeroSlider = () => {
             >
               <div className="container ">
                 <div className="lg:flex gap-6 justify-center items-center ">
-                  <div className="lg:w-1/3">
+                  <div className="lg:flex-1">
                     <img
                       src="https://hb.imgix.net/0007cb3df8899e39ade2974714b47d8196b840f1.png?auto=compress,format&fit=crop&h=353&w=616&s=6c19438529b3fb0c59d3fddffa768e6c"
                       className="xl:max-w-[550px] xl:h-[440px] rounded-lg shadow-2xl"
                     />
                   </div>
 
-                  <div className="text-white lg:w-1/3 lg:ml-10">
-                    <h1 className="text-3xl md:text-5xl mt-5 md:mt-0 font-bold">
+                  <div className="text-white lg:flex-1 lg:ml-10">
+                    <h1 className="text-3xl text-p-background  md:text-5xl mt-5 md:mt-0 font-bold">
                       <Typewriter
                         words={["Metaphor ReFantazio"]}
                         loop={false}
@@ -141,7 +141,7 @@ const HeroSlider = () => {
                         delaySpeed={1000}
                       />
                     </h1>
-                    <p className="py-6">
+                    <p className="py-6 text-p-background ">
                       It’s always a difficult task to follow up on what some
                       people consider to be one of the greatest games of all
                       time, in this case, Persona 5, and yet Atlus continues to
