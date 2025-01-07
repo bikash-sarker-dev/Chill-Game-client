@@ -3,7 +3,7 @@ import { SiLevelsdotfyi } from "react-icons/si";
 
 const NextLevel = () => {
   return (
-    <section className="bg-p-background dark:bg-dark-mode-bg py-32 my-32">
+    <section className="bg-p-background dark:bg-dark-p-background py-36 my-32">
       <div className="container">
         <div className="flex gap-8">
           <div className="md:flex-1">

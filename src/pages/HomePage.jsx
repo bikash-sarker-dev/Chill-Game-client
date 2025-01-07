@@ -4,6 +4,7 @@ import HeroSlider from "../components/home/hero-slider/HeroSlider";
 import HighestRated from "../components/home/highestRated/HighestRated";
 import LatestReview from "../components/home/latestReview/LatestReview";
 import NextLevel from "../components/home/nextLevel/NextLevel";
+import Testimonials from "../components/home/testimonials/Testimonials";
 import HeadHtmlTitle from "../components/pageHeading/HeadHtmlTitle";
 
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Tournament />
       <LatestReview />
       <NextLevel />
+      <Testimonials />
     </main>
   );
 };
